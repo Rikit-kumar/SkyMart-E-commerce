@@ -7,6 +7,7 @@ import { Link } from "react-router";
 
 import { useState } from "react";
 import { Search } from "lucide-react";
+import Footer from "../components/Footer";
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -69,7 +70,6 @@ const Shop = () => {
       <Navbar />
 
       <section className="min-h-screen bg-[#0B0B0B] text-white">
-        {/* ================= HERO ================= */}
 
         <div className="border-b border-zinc-800 bg-[#101010]">
           <div className="mx-auto max-w-7xl px-6 py-20">
@@ -84,8 +84,6 @@ const Shop = () => {
               more. Carefully selected products with the best quality.
             </p>
 
-            {/* Breadcrumb */}
-
             <div className="mt-8 flex items-center gap-2 text-sm text-zinc-500">
               <Link to="/home" className="transition hover:text-lime-300">
                 Home
@@ -98,8 +96,6 @@ const Shop = () => {
           </div>
         </div>
 
-        {/* ================= PRODUCT COUNT ================= */}
-
         <div className="mx-auto mt-12 flex max-w-7xl items-center justify-between px-6">
           <h2 className="text-3xl font-bold">All Products</h2>
 
@@ -109,7 +105,6 @@ const Shop = () => {
         </div>
 
         <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-5 px-6 lg:flex-row lg:items-center lg:justify-between">
-          {/* Search */}
 
           <div className="relative w-full max-w-lg">
             <Search
@@ -125,8 +120,6 @@ const Shop = () => {
               className="h-14 w-full rounded-2xl border border-zinc-700 bg-[#121212] pl-14 pr-5 text-white outline-none transition-all duration-300 placeholder:text-zinc-500 focus:border-lime-300"
             />
           </div>
-
-          {/* Sort */}
 
           <select
             value={sortOption}
@@ -205,8 +198,6 @@ const Shop = () => {
           </button>
         </div>
 
-        {/* ================= PRODUCT GRID ================= */}
-
         <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-8 px-6 pb-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {sortedProducts.length > 0 ? (
             sortedProducts.map((product) => (
@@ -224,6 +215,8 @@ const Shop = () => {
             </div>
           )}
         </div>
+
+        <Footer />
       </section>
     </>
   );

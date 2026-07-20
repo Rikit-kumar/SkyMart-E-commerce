@@ -55,7 +55,6 @@ const ProductDetails = () => {
 
       <section className="min-h-screen bg-[#0B0B0B] text-white">
         <div className="mx-auto max-w-7xl px-8 py-12">
-          {/* Back Button */}
 
           <div className="mb-8">
             <p className="text-sm uppercase tracking-[5px] text-lime-300">
@@ -73,13 +72,9 @@ const ProductDetails = () => {
             Back to Shop
           </Link>
 
-          {/* Main Layout */}
-
           <div className="grid gap-16 lg:grid-cols-2">
-            {/* LEFT */}
 
             <div className="relative flex items-center justify-center rounded-[40px] border border-zinc-800 bg-gradient-to-br from-[#161616] to-[#0d0d0d] p-16">
-              {/* Glow */}
 
               <div className="absolute h-80 w-80 rounded-full bg-lime-300/10 blur-[120px]" />
 
@@ -90,11 +85,7 @@ const ProductDetails = () => {
               />
             </div>
 
-            {/* RIGHT */}
-
             <div>
-              {/* Badges */}
-
               <div className="flex flex-wrap gap-3">
                 {product.featured && (
                   <span className="flex items-center gap-2 rounded-full bg-lime-300 px-4 py-2 text-sm font-semibold text-black">
@@ -111,13 +102,9 @@ const ProductDetails = () => {
                 )}
               </div>
 
-              {/* Title */}
-
               <h1 className="mt-8 text-4xl font-bold leading-tight">
                 {product.name}
               </h1>
-
-              {/* Rating */}
 
               <div className="mt-5 flex items-center gap-3">
                 <Star size={20} className="fill-yellow-400 text-yellow-400" />
@@ -127,19 +114,13 @@ const ProductDetails = () => {
                 <span className="text-zinc-500">(128 Reviews)</span>
               </div>
 
-              {/* Price */}
-
               <h2 className="mt-6 text-4xl font-bold text-lime-300">
                 ${product.price}
               </h2>
 
-              {/* Description */}
-
               <p className="mt-8 max-w-xl leading-8 text-zinc-400">
                 {product.description}
               </p>
-
-              {/* Info */}
 
               <div className="mt-10 space-y-4">
                 <div className="flex items-center gap-4">
@@ -166,8 +147,6 @@ const ProductDetails = () => {
                   )}
                 </div>
 
-                {/* Quantity */}
-
                 <div className="mt-10">
                   <h3 className="mb-4 text-lg font-semibold">Quantity</h3>
 
@@ -192,17 +171,12 @@ const ProductDetails = () => {
                   </div>
                 </div>
 
-                {/* Product Actions */}
-
                 <div className="mt-10 flex flex-wrap gap-4">
-                  {/* Add Cart */}
 
                   <button onClick={() => addToCart(product)} className="flex flex-1 items-center justify-center gap-3 rounded-2xl bg-lime-300 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-lime-400">
                     <ShoppingCart size={20} />
                     Add to Cart
                   </button>
-
-                  {/* Wishlist */}
 
                   <button className="flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-800 bg-[#121212] transition-all duration-300 hover:border-lime-300 hover:bg-lime-300 hover:text-black">
                     <Heart size={22} />
@@ -218,8 +192,6 @@ const ProductDetails = () => {
           </div>
 
           <div className="my-16 h-px bg-zinc-800"></div>
-
-          {/* ================= Related Products ================= */}
 
           <section className="mt-20">
             <div className="mb-10 flex items-end justify-between">

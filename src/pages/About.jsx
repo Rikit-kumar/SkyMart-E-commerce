@@ -3,7 +3,8 @@ import { Link } from "react-router";
 import { ChevronRight } from "lucide-react";
 
 import { Truck, ShieldCheck, Gem, Headphones } from "lucide-react";
-import { Linkedin, Globe, Twitter } from "lucide-react";
+import Footer from "../components/Footer";
+
 
 const About = () => {
   const whyChooseUs = [
@@ -73,32 +74,24 @@ const About = () => {
       <Navbar />
 
       <section className="min-h-screen bg-[#0B0B0B] text-white">
-        {/* ================= HERO ================= */}
 
         <div className="border-b border-zinc-800 bg-[#101010]">
           <div className="mx-auto max-w-7xl px-6 py-24">
-            {/* Small Heading */}
 
             <p className="text-sm font-semibold uppercase tracking-[5px] text-lime-300">
               About SkyMart
             </p>
-
-            {/* Main Heading */}
 
             <h1 className="mt-5 max-w-4xl text-5xl font-extrabold leading-tight md:text-6xl">
               Building the Future of
               <span className="text-lime-300"> Online Shopping</span>
             </h1>
 
-            {/* Description */}
-
             <p className="mt-8 max-w-3xl text-lg leading-8 text-zinc-400">
               At SkyMart, we believe shopping should be simple, secure, and
               enjoyable. Our mission is to deliver premium products, trusted
               quality, and an exceptional customer experience—all in one place.
             </p>
-
-            {/* Buttons */}
 
             <div className="mt-10 flex flex-wrap gap-5">
               <Link
@@ -116,8 +109,6 @@ const About = () => {
               </Link>
             </div>
 
-            {/* Breadcrumb */}
-
             <div className="mt-12 flex items-center gap-2 text-sm text-zinc-500">
               <Link to="/home" className="hover:text-lime-300 transition">
                 Home
@@ -130,11 +121,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* ================= OUR STORY ================= */}
-
         <section className="py-24">
           <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
-            {/* Left Side - Image */}
 
             <div className="relative">
               <img
@@ -143,16 +131,12 @@ const About = () => {
                 className="h-[550px] w-full rounded-3xl object-cover"
               />
 
-              {/* Experience Card */}
-
               <div className="absolute -bottom-8 left-8 rounded-3xl border border-zinc-700 bg-[#121212] p-6 shadow-xl">
                 <h2 className="text-4xl font-bold text-lime-300">2024</h2>
 
                 <p className="mt-2 text-zinc-400">Founded with Passion</p>
               </div>
             </div>
-
-            {/* Right Side */}
 
             <div>
               <p className="text-sm font-semibold uppercase tracking-[5px] text-lime-300">
@@ -176,8 +160,6 @@ const About = () => {
                 daily essentials, SkyMart is committed to providing a seamless
                 shopping experience backed by trusted service and fast delivery.
               </p>
-
-              {/* Features */}
 
               <div className="mt-10 space-y-5">
                 <div className="flex items-center gap-4">
@@ -212,11 +194,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* ================= WHY CHOOSE US ================= */}
-
         <section className="py-24 bg-[#101010]">
           <div className="mx-auto max-w-7xl px-6">
-            {/* Heading */}
 
             <div className="text-center">
               <p className="text-sm font-semibold uppercase tracking-[5px] text-lime-300">
@@ -234,8 +213,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Cards */}
-
             <div className="mt-16 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
               {whyChooseUs.map((item) => {
                 const Icon = item.icon;
@@ -245,19 +222,14 @@ const About = () => {
                     key={item.id}
                     className="group rounded-3xl border border-zinc-800 bg-[#121212] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-lime-300/40"
                   >
-                    {/* Icon */}
 
                     <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-lime-300/10 text-lime-300 transition-all duration-300 group-hover:bg-lime-300 group-hover:text-black">
                       <Icon size={30} />
                     </div>
 
-                    {/* Title */}
-
                     <h3 className="mt-8 text-2xl font-bold text-white">
                       {item.title}
                     </h3>
-
-                    {/* Description */}
 
                     <p className="mt-4 leading-7 text-zinc-400">
                       {item.description}
@@ -269,11 +241,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* ================= TEAM ================= */}
-
         <section className="py-24">
           <div className="mx-auto max-w-7xl px-6">
-            {/* Heading */}
 
             <div className="text-center">
               <p className="text-sm font-semibold uppercase tracking-[5px] text-lime-300">
@@ -292,15 +261,12 @@ const About = () => {
               </p>
             </div>
 
-            {/* Cards */}
-
             <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {teamMembers.map((member) => (
                 <div
                   key={member.id}
                   className="group rounded-3xl border border-zinc-800 bg-[#121212] p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:border-lime-300/40"
                 >
-                  {/* Image */}
 
                   <img
                     src={member.image}
@@ -308,34 +274,16 @@ const About = () => {
                     className="mx-auto h-36 w-36 rounded-full object-cover ring-4 ring-zinc-800 transition-all duration-300 group-hover:ring-lime-300"
                   />
 
-                  {/* Name */}
-
                   <h3 className="mt-6 text-2xl font-bold">{member.name}</h3>
 
-                  {/* Role */}
-
                   <p className="mt-2 text-lime-300">{member.role}</p>
-
-                  {/* Social Icons */}
-
-                  <div className="mt-6 flex justify-center gap-4">
-                    <button className="flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 transition hover:border-lime-300 hover:bg-lime-300 hover:text-black">
-                      <Linkedin size={18} />
-                    </button>
-
-                    <button className="flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 transition hover:border-lime-300 hover:bg-lime-300 hover:text-black">
-                      <Globe size={18} />
-                    </button>
-
-                    <button className="flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 transition hover:border-lime-300 hover:bg-lime-300 hover:text-black">
-                      <Twitter size={18} />
-                    </button>
-                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Footer />
       </section>
     </>
   );

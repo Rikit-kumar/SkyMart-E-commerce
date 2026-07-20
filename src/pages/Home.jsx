@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ProductSection from "../components/ProductSection";
+import WhyChooseUs from "../components/WhyChooseUs";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <ProductSection />
+      <WhyChooseUs />
       <Footer />
     </>
   );

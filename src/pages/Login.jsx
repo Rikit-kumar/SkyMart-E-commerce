@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate, Link } from "react-router"; // Tip: browser-router standard hai, ensure your package routing matches
+import { useNavigate, Link } from "react-router"; 
 
-// Fixed: Added EyeOff here
 import { ShoppingBag, Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
 
 const Login = () => {
@@ -37,9 +36,9 @@ const Login = () => {
   return (
     <section className="min-h-screen bg-[#0B0B0B] text-white">
       <div className="mx-auto flex min-h-screen max-w-[1600px]">
-        {/* ================= LEFT SIDE ================= */}
+
         <div className="relative flex w-1/2 flex-col justify-between border-r border-zinc-800 px-12 py-10">
-          {/* ---------- Logo ---------- */}
+
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-lime-300">
               <ShoppingBag size={22} className="text-black" />
@@ -49,7 +48,6 @@ const Login = () => {
             </h1>
           </div>
 
-          {/* ---------- Hero Text ---------- */}
           <div className="max-w-[560px]">
             <p className="mb-7 uppercase tracking-[6px] text-lime-300 text-sm font-medium">
               Welcome Back
@@ -65,7 +63,6 @@ const Login = () => {
             </p>
           </div>
 
-          {/* ---------- Bottom Cards ---------- */}
           <div className="grid grid-cols-3 gap-6">
             <div className="rounded-3xl border border-zinc-700 py-8 text-center">
               <h3 className="text-5xl font-bold text-lime-300">20K+</h3>
@@ -81,22 +78,19 @@ const Login = () => {
             </div>
           </div>
 
-          {/* ---------- Green Glow ---------- */}
           <div className="absolute bottom-10 left-40 h-72 w-72 rounded-full bg-lime-400/10 blur-[140px]" />
         </div>
 
-        {/* ================= RIGHT SIDE ================= */}
         <div className="flex w-1/2 items-center justify-center bg-[#0B0B0B]">
           <div className="w-[470px] rounded-[30px] border border-zinc-800 bg-[#121212] p-10 shadow-[0_20px_60px_rgba(0,0,0,.45)]">
-            {/* Heading */}
+
             <h2 className="text-4xl font-bold">Sign in</h2>
             <p className="mt-2 text-zinc-500">
               Enter your credentials to continue
             </p>
 
-            {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="mt-10 space-y-6">
-              {/* Email */}
+
               <div className="relative">
                 <Mail
                   size={18}
@@ -121,7 +115,6 @@ const Login = () => {
                 )}
               </div>
 
-              {/* Password */}
               <div className="relative">
                 <Lock
                   size={18}
@@ -157,7 +150,6 @@ const Login = () => {
                 </button>
               </div>
 
-              {/* Remember */}
               <div className="flex items-center justify-between">
                 <label className="flex items-center gap-2 text-sm text-zinc-400 cursor-pointer">
                   <input type="checkbox" className="accent-lime-300" />
@@ -171,7 +163,6 @@ const Login = () => {
                 </button>
               </div>
 
-              {/* Button - Fixed: Added type="submit" */}
               <button
                 type="submit"
                 className="flex h-16 w-full items-center justify-center gap-3 rounded-2xl bg-lime-300 text-lg font-bold text-black transition-all duration-300 hover:scale-[1.02]"
@@ -180,7 +171,6 @@ const Login = () => {
                 <ArrowRight size={20} />
               </button>
 
-              {/* Register */}
               <p className="text-center text-zinc-500">
                 Don't have an account?
                 <Link

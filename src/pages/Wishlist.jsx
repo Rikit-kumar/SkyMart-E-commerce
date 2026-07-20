@@ -42,7 +42,6 @@ const Wishlist = () => {
 
       <section className="min-h-screen bg-[#0B0B0B] py-12 text-white">
         <div className="mx-auto max-w-7xl px-6">
-          {/* Header */}
 
           <div className="mb-12 flex items-center justify-between">
             <div>
@@ -59,8 +58,6 @@ const Wishlist = () => {
               {wishlist.length} {wishlist.length === 1 ? "Product" : "Products"}
             </span>
           </div>
-
-          {/* Products */}
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {wishlist.map((product) => (

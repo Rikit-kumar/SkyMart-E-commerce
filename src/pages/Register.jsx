@@ -32,7 +32,7 @@ const Register = () => {
   const password = watch("password");
 
   const onSubmit = (data) => {
-    // Fixed: Properly naming variables and parsing structure safely
+
     const storedUsers = localStorage.getItem("users");
     const users = storedUsers ? JSON.parse(storedUsers) : [];
 
@@ -53,15 +53,15 @@ const Register = () => {
     localStorage.setItem("users", JSON.stringify(users));
     alert("Account Created Successfully");
     reset();
-    navigate("/"); // Redirecting to login route
+    navigate("/");
   };
 
   return (
     <section className="min-h-screen bg-[#0B0B0B] text-white selection:bg-lime-300 selection:text-black">
       <div className="mx-auto flex min-h-screen max-w-[1600px]">
-        {/* ================= LEFT SIDE ================= */}
+
         <div className="relative flex w-1/2 flex-col justify-between border-r border-zinc-800 px-12 py-10">
-          {/* Logo */}
+
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-lime-300">
               <ShoppingBag size={22} className="text-black" />
@@ -71,7 +71,6 @@ const Register = () => {
             </h1>
           </div>
 
-          {/* Hero */}
           <div className="max-w-[560px]">
             <p className="mb-7 text-sm font-medium uppercase tracking-[6px] text-lime-300">
               Join SkyMart
@@ -87,7 +86,6 @@ const Register = () => {
             </p>
           </div>
 
-          {/* Stats */}
           <div className="grid grid-cols-3 gap-6">
             <div className="rounded-3xl border border-zinc-700 py-8 text-center">
               <h3 className="text-5xl font-bold text-lime-300">20K+</h3>
@@ -106,8 +104,6 @@ const Register = () => {
           <div className="absolute bottom-10 left-40 h-72 w-72 rounded-full bg-lime-400/10 blur-[140px]" />
         </div>
 
-        {/* ================= RIGHT SIDE ================= */}
-        {/* ================= RIGHT SIDE ================= */}
         <div className="flex w-1/2 items-center justify-center bg-[#0B0B0B] py-12 h-screen overflow-y-auto no-scrollbar">
           <div className="w-[470px] my-auto rounded-[30px] border border-zinc-800 bg-[#121212] p-10 shadow-[0_20px_60px_rgba(0,0,0,.45)]">
             <h2 className="text-4xl font-bold">Create Account</h2>
@@ -116,7 +112,6 @@ const Register = () => {
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-3">
-              {/* Name */}
               <div>
                 <div className="relative">
                   <User
@@ -142,7 +137,6 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Email */}
               <div>
                 <div className="relative">
                   <Mail
@@ -171,7 +165,6 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Password */}
               <div>
                 <div className="relative">
                   <Lock
@@ -204,7 +197,6 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Confirm Password */}
               <div>
                 <div className="relative">
                   <Lock
@@ -242,7 +234,6 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Terms Checkbox */}
               <div>
                 <label className="flex items-center gap-3 text-sm text-zinc-400 cursor-pointer">
                   <input
@@ -263,7 +254,6 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-lime-300 text-lg font-bold text-black transition duration-300 hover:scale-[1.02] active:scale-[0.99] mt-2"
@@ -272,7 +262,6 @@ const Register = () => {
                 <ArrowRight size={20} />
               </button>
 
-              {/* Sign In Navigation */}
               <p className="text-center text-zinc-500 pt-2">
                 Already have an account?
                 <Link

@@ -4,7 +4,13 @@ import heroImage from "../assets/images/hero-main.png";
 import { Package, Users, Star, ShieldCheck } from "lucide-react";
 import { Laptop, Shirt, Sofa, House, Dumbbell, Watch } from "lucide-react";
 
+import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
+
 const Hero = () => {
+
+   const navigate = useNavigate();
+
   const categories = [
     {
       id: 1,
@@ -68,11 +74,9 @@ const Hero = () => {
   return (
     <section className="px-8 pt-8">
       <div className="relative overflow-hidden rounded-[30px] border border-zinc-800 bg-[#090909]">
-        {/* Green Glow */}
         <div className="absolute right-20 top-10 h-72 w-72 rounded-full bg-lime-400/20 blur-[120px]" />
 
         <div className="grid min-h-[520px] grid-cols-2 items-center gap-10 px-14">
-          {/* ================= Left ================= */}
 
           <div className="relative z-10">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[5px] text-lime-300">
@@ -93,18 +97,16 @@ const Hero = () => {
             </p>
 
             <div className="mt-10 flex gap-5">
-              <button className="flex items-center gap-2 rounded-xl bg-lime-300 px-8 py-4 font-semibold text-black transition hover:scale-105">
+              <button onClick={() => navigate("/shop")} className="flex items-center gap-2 rounded-xl bg-lime-300 px-8 py-4 font-semibold text-black transition hover:scale-105">
                 Shop Now
                 <ArrowRight size={20} />
               </button>
 
-              <button className="rounded-xl border border-zinc-700 px-8 py-4 transition hover:border-lime-300 hover:text-lime-300">
+              <button onClick={()=>document.getElementById("featured-products") ?.scrollIntoView({behavior:"smooth"})} className="rounded-xl border border-zinc-700 px-8 py-4 transition hover:border-lime-300 hover:text-lime-300">
                 View Products
               </button>
             </div>
           </div>
-
-          {/* ================= Right ================= */}
 
           <div className="relative flex justify-center items-center">
             <img
@@ -116,8 +118,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* ================= Statistics ================= */}
-
       <div className="mt-14 grid grid-cols-4 gap-5">
         {statistics.map((item) => {
           const Icon = item.icon;
@@ -127,13 +127,10 @@ const Hero = () => {
               key={item.id}
               className="group flex items-center gap-6 rounded-2xl border border-zinc-800 bg-[#121212] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-lime-300/40 hover:bg-[#171717]"
             >
-              {/* Icon */}
 
               <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-xl bg-lime-300/10 text-lime-300 transition-all duration-300 group-hover:bg-lime-300 group-hover:text-black">
                 <Icon size={24} />
               </div>
-
-              {/* Text */}
 
               <div>
                 <h3 className="text-2xl font-bold text-white">{item.value}</h3>
@@ -144,8 +141,6 @@ const Hero = () => {
           );
         })}
       </div>
-
-      {/* ================= Categories ================= */}
 
       <div className="mt-16">
         <div className="mb-8 flex items-center justify-between">

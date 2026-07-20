@@ -1,11 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getData, saveData } from "../utils/storage";
 
 export const WishlistContext = createContext();
 
 const WishlistProvider = ({ children }) => {
-  const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState(() => {
+    return getData("wishlist") || [];
+  });
 
-  // ================= Add To Wishlist =================
+  useEffect(() => {
+    saveData("wishlist", wishlist);
+  }, [wishlist]);
 
   const addToWishlist = (product) => {
     const exists = wishlist.find((item) => item.id === product.id);
@@ -15,13 +20,9 @@ const WishlistProvider = ({ children }) => {
     }
   };
 
-  // ================= Remove From Wishlist =================
-
   const removeFromWishlist = (id) => {
     setWishlist(wishlist.filter((item) => item.id !== id));
   };
-
-  // ================= Toggle Wishlist =================
 
   const toggleWishlist = (product) => {
     const exists = wishlist.find((item) => item.id === product.id);
@@ -32,8 +33,6 @@ const WishlistProvider = ({ children }) => {
       addToWishlist(product);
     }
   };
-
-  // ================= Check Wishlist =================
 
   const isInWishlist = (id) => {
     return wishlist.some((item) => item.id === id);

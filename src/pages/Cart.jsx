@@ -46,7 +46,6 @@ const Cart = () => {
 
       <section className="min-h-screen bg-[#0B0B0B] py-12 text-white">
         <div className="mx-auto max-w-7xl px-6">
-          {/* Header */}
 
           <div className="mb-10 flex items-center justify-between">
             <div>
@@ -62,13 +61,9 @@ const Cart = () => {
             </span>
           </div>
 
-          {/* Layout */}
-
           <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
-            {/* LEFT */}
 
             <div className="space-y-6">
-              {/* Product */}
 
               {cart.map((item) => (
                 <div
@@ -91,8 +86,6 @@ const Cart = () => {
                         {item.category}
                       </span>
 
-                      {/* Quantity */}
-
                       <div className="mt-6 flex w-fit items-center rounded-xl border border-zinc-700">
                         <button
                           onClick={() => decreaseQuantity(item.id)}
@@ -114,8 +107,6 @@ const Cart = () => {
                       </div>
                     </div>
 
-                    {/* Price */}
-
                     <div className="flex flex-col items-end justify-between">
                       <button
                         onClick={() => removeFromCart(item.id)}
@@ -132,8 +123,6 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-
-            {/* RIGHT */}
 
             <div className="h-fit rounded-3xl border border-zinc-800 bg-[#121212] p-8">
               <h2 className="text-2xl font-bold">Order Summary</h2>

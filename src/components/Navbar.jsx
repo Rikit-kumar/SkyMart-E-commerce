@@ -32,7 +32,6 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800 bg-[#0B0B0B]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-8">
-        {/* Logo */}
 
         <NavLink to="/home" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-lime-300">
@@ -44,8 +43,6 @@ const Navbar = () => {
             <span className="text-lime-300">Mart</span>
           </h1>
         </NavLink>
-
-        {/* Navigation */}
 
         <nav>
           <ul className="flex items-center gap-12">
@@ -63,7 +60,7 @@ const Navbar = () => {
                       size={19}
                       className={`transition-all duration-300 ${
                         isActive
-                          ? "text-lime-300 fill-lime-300"
+                          ? "text-lime-300"
                           : "group-hover:text-lime-300"
                       }`}
                     />
@@ -94,7 +91,7 @@ const Navbar = () => {
                       size={19}
                       className={`transition-all duration-300 ${
                         isActive
-                          ? "text-lime-300 fill-lime-300"
+                          ? "text-lime-300"
                           : "group-hover:text-lime-300"
                       }`}
                     />
@@ -125,7 +122,7 @@ const Navbar = () => {
                       size={19}
                       className={`transition-all duration-300 ${
                         isActive
-                          ? "text-lime-300 fill-lime-300"
+                          ? "text-lime-300"
                           : "group-hover:text-lime-300"
                       }`}
                     />
@@ -144,11 +141,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* Right Side */}
-
         <div className="flex items-center gap-6">
-          {/* Cart */}
-
           <button
             onClick={() => navigate("/cart")}
             className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-800 bg-[#121212] transition-all duration-300 hover:border-lime-300 hover:text-lime-300"
@@ -175,8 +168,6 @@ const Navbar = () => {
             )}
           </Link>
 
-          {/* User */}
-
           <div className="flex items-center gap-3 rounded-full border border-zinc-700 px-4 py-2">
             {/* <CircleUserRound size={24} className="text-lime-300" /> */}
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 font-bold text-black">
@@ -189,8 +180,6 @@ const Navbar = () => {
               <h3 className="font-semibold text-white">{userName}</h3>
             </div>
           </div>
-
-          {/* Logout */}
 
           <button
             onClick={handleLogout}

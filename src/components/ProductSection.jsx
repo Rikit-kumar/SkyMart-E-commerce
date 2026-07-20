@@ -5,9 +5,8 @@ import { Link } from "react-router";
 
 const ProductSection = () => {
   return (
-    <section className="bg-[#0B0B0B] py-24">
+    <section id="featured-products" className="bg-[#0B0B0B] py-24">
       <div className="mx-auto max-w-[1500px] px-6">
-        {/* ================= Heading ================= */}
 
         <div className="mb-14 flex items-end justify-between">
           <div>
@@ -29,8 +28,6 @@ const ProductSection = () => {
             View All
           </button>
         </div>
-
-        {/* ================= Products Grid ================= */}
 
         <div className="grid grid-cols-4 gap-7">
           {products
