@@ -4,13 +4,38 @@ import { getData, saveData } from "../utils/storage";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  const getCartKey = () => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    return user ? `cart_${user.email}` : "cart_guest";
+  };
+
+  const [currentUser, setCurrentUser] = useState(() => {
+    return JSON.parse(localStorage.getItem("currentUser"));
+  });
+
   const [cart, setCart] = useState(() => {
-    return getData("cart") || [];
+    return getData(getCartKey()) || [];
   });
 
   useEffect(() => {
-    saveData("cart", cart);
+    saveData(getCartKey(), cart);
   }, [cart]);
+
+  useEffect(() => {
+    setCart(getData(getCartKey()) || []);
+  }, [currentUser]);
+
+  useEffect(() => {
+    const handleUserChange = () => {
+      setCart(getData(getCartKey()) || []);
+    };
+
+    window.addEventListener("userChanged", handleUserChange);
+
+    return () => {
+      window.removeEventListener("userChanged", handleUserChange);
+    };
+  }, []);
 
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);

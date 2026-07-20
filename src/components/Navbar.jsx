@@ -25,6 +25,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
+    window.dispatchEvent(new Event("userChanged"));
     alert("Logout Successfully");
     navigate("/");
   };

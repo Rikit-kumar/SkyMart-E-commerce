@@ -28,6 +28,7 @@ const Login = () => {
     }
 
     localStorage.setItem("currentUser", JSON.stringify(user));
+    window.dispatchEvent(new Event("userChanged"));
     alert("Login Successful");
     reset();
     navigate("/home");

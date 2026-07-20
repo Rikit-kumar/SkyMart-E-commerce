@@ -4,13 +4,33 @@ import { getData, saveData } from "../utils/storage";
 export const WishlistContext = createContext();
 
 const WishlistProvider = ({ children }) => {
+  const getWishlistKey = () => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (!user) return "wishlist_guest";
+
+    return `wishlist_${user.email}`;
+  };
+
   const [wishlist, setWishlist] = useState(() => {
-    return getData("wishlist") || [];
+    return getData(getWishlistKey()) || [];
   });
 
   useEffect(() => {
-    saveData("wishlist", wishlist);
+    saveData(getWishlistKey(), wishlist);
   }, [wishlist]);
+
+  useEffect(() => {
+    const handleUserChange = () => {
+      setWishlist(getData(getWishlistKey()) || []);
+    };
+
+    window.addEventListener("userChanged", handleUserChange);
+
+    return () => {
+      window.removeEventListener("userChanged", handleUserChange);
+    };
+  }, []);
 
   const addToWishlist = (product) => {
     const exists = wishlist.find((item) => item.id === product.id);
