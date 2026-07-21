@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate, Link } from "react-router"; 
+import { useNavigate, Link } from "react-router";
 
 import { ShoppingBag, Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
 
@@ -19,7 +19,9 @@ const Login = () => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     const user = users.find(
-      (item) =>  item.email.toLowerCase() === data.email.trim().toLowerCase() && item.password === data.password,
+      (item) =>
+        item.email.toLowerCase() === data.email.trim().toLowerCase() &&
+        item.password === data.password,
     );
 
     if (!user) {
@@ -37,9 +39,7 @@ const Login = () => {
   return (
     <section className="min-h-screen bg-[#0B0B0B] text-white">
       <div className="mx-auto flex min-h-screen max-w-[1600px]">
-
         <div className="relative flex w-1/2 flex-col justify-between border-r border-zinc-800 px-12 py-10">
-
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-lime-300">
               <ShoppingBag size={22} className="text-black" />
@@ -84,31 +84,31 @@ const Login = () => {
 
         <div className="flex w-1/2 items-center justify-center bg-[#0B0B0B]">
           <div className="w-[470px] rounded-[30px] border border-zinc-800 bg-[#121212] p-10 shadow-[0_20px_60px_rgba(0,0,0,.45)]">
-
             <h2 className="text-4xl font-bold">Sign in</h2>
             <p className="mt-2 text-zinc-500">
               Enter your credentials to continue
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="mt-10 space-y-6">
-
-              <div className="relative">
-                <Mail
-                  size={18}
-                  className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-500"
-                />
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /^\S+@\S+\.\S+$/,
-                      message: "Invalid Email",
-                    },
-                  })}
-                  className="h-16 w-full rounded-2xl border border-zinc-700 bg-[#1A1A1A] pl-14 pr-5 text-white outline-none transition-all duration-300 focus:border-lime-300"
-                />
+              <div>
+                <div className="relative">
+                  <Mail
+                    size={18}
+                    className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-500"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^\S+@\S+\.\S+$/,
+                        message: "Invalid Email",
+                      },
+                    })}
+                    className="h-16 w-full rounded-2xl border border-zinc-700 bg-[#1A1A1A] pl-14 pr-5 text-white outline-none transition-all duration-300 focus:border-lime-300"
+                  />
+                </div>
                 {errors.email && (
                   <p className="mt-2 text-sm text-red-500">
                     {errors.email.message}
@@ -116,39 +116,42 @@ const Login = () => {
                 )}
               </div>
 
-              <div className="relative">
-                <Lock
-                  size={18}
-                  className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-500"
-                />
-                <input
-                  type={showPassword ? "text" : "password"}
-                  {...register("password", {
-                    required: "Password is required",
-                    minLength: {
-                      value: 6,
-                      message: "Minimum 6 characters",
-                    },
-                  })}
-                  placeholder="Password"
-                  className="h-16 w-full rounded-2xl border border-zinc-700 bg-[#1A1A1A] pl-14 pr-14 text-white outline-none transition-all duration-300 focus:border-lime-300"
-                />
+              <div>
+                <div className="relative">
+                  <Lock
+                    size={18}
+                    className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-500"
+                  />
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 6,
+                        message: "Minimum 6 characters",
+                      },
+                    })}
+                    placeholder="Password"
+                    className="h-16 w-full rounded-2xl border border-zinc-700 bg-[#1A1A1A] pl-14 pr-14 text-white outline-none transition-all duration-300 focus:border-lime-300"
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-5 top-1/2 -translate-y-1/2 z-10"
+                  >
+                    {showPassword ? (
+                      <EyeOff size={18} className="text-zinc-500" />
+                    ) : (
+                      <Eye size={18} className="text-zinc-500" />
+                    )}
+                  </button>
+                </div>
                 {errors.password && (
                   <p className="mt-2 text-sm text-red-500">
                     {errors.password.message}
                   </p>
                 )}
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-5 top-1/2 -translate-y-1/2 z-10"
-                >
-                  {showPassword ? (
-                    <EyeOff size={18} className="text-zinc-500" />
-                  ) : (
-                    <Eye size={18} className="text-zinc-500" />
-                  )}
-                </button>
               </div>
 
               <div className="flex items-center justify-between">
@@ -156,7 +159,7 @@ const Login = () => {
                   <input type="checkbox" className="accent-lime-300" />
                   Remember me
                 </label>
-                <button 
+                <button
                   type="button"
                   className="text-sm text-lime-300 hover:underline"
                 >
